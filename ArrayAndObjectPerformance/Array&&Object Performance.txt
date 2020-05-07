@@ -1,0 +1,14 @@
+﻿-inserting, removing, and accessing JS objects are all O(1) time complexity
+-actually searching through an object for a particular value takes O(n) time complexity
+-Object.keys, .values, and .entries are O(n) time complexity
+-Object.hasOwnProperty has O(1) time complexity
+
+
+-accessing data in an array is O(1) time complexity
+-searching through an array is O(n) time complexity
+-inserting/deleting an element at the end of an array is more efficient [O(1)] than inserting at the beginning of an array because when you insert it at the start of an array, the indices of an array are all messed up [O(n)]
+
+
+-array methods .push and .pop are O(1) time complexity
+-array method .sort is O(n * log(n)) time complexity
+- array methods .shift/unshift, .concat, .splice, .splice, and others are O(n) time complexity
