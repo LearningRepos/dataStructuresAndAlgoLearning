@@ -36,24 +36,30 @@ public class Search {
         return false;
     }
 
-    public static int stringSearch(String longWord, String word){
-        int count = 0;
-        //initially goes tru long word and checks if the first letter of word equals a certain point in longword
-        for(int i =0; i<longWord.length(); i++){
-            if(longWord.substring(i,i+1).equals(word.substring(0,1))){
-                //starts longword at first letter of first word
-                for(int j =i; j<word.length(); j++){
-                    //simultaneously comparing words
-                    for(int k =0; k<word.length(); k++ ){
-                        if(longWord.substring(j,j+1).equals(word.substring(k,k+1))){
-                            break;
-                        }
-                    }
-                }
-            }
+public static int StringSearch(String longWord,String shortWord){
+    int count =0;
+    for(int i =0; i<longWord.length(); i++){
+      for(int j =0; j<shortWord.length(); j++){
+        //weeds out unsimilar characters
+        if(!longWord.substring(i,i+1).equals(shortWord.substring(j,j+1))){
+          break;
         }
-        return count;
+        //Testing to see if all the remaining similar characters survive
+        //System.out.println(longWord.substring(i,i+1) + " " + shortWord.substring(j,j+1));
+
+        //adds 1 to i manually beacuse you're still in the j loop and making comparisons
+        if(longWord.substring(i,i+1).equals(shortWord.substring(j,j+1))){
+          i++;
+        }
+        //if j is at the end character and survives then we increment the count by 1 and break to stop the loops and reinitialize i
+        if(j == shortWord.length()-1){
+          count++;
+          break;
+        }
+      }
     }
+    return count;
+  }
 
     public static void main(String[] args){
         //Linear search implementation
@@ -68,8 +74,8 @@ public class Search {
         //returns true
         //System.out.println(Binary(sortedArray, value));
 
-        //String search implementation brute force
-        System.out.println(stringSearch("omkjkjkom","omko"));
+        //String search implementation O(n^2) version
+        System.out.println(StringSearch("lorie loled the lolsin my cosines itss0funnylol","lol"));
 
 
     }
