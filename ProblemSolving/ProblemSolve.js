@@ -22,7 +22,8 @@ function same( arrayone, arraytwo){
 console.log("Brute Force Solution")
 var array5 = [1,2,3];
 var array6 = [1,9];
-console.log(same(array5, array6));
+//returns false
+//console.log(same(array5, array6));
 
 var array3 = [1,2,3];
 var array4 = [4,1,9];
@@ -93,6 +94,36 @@ function anagram(str1, str2){
 console.log("Anagram Frequency Counter Solution");
 console.log(anagram("texttwisttime","timetwisttext"));
 
+//checks if numbers have the same frequency of digits
+function sameFrequency(num1,num2) {
+    var first = num1 + "";
+    var second = num2 + "";
+
+    var firstFreq = {};
+    var secondFreq = {};
+
+    if(first.length !== second.length){
+        return false;
+    }
+
+    for(var i of first){
+        firstFreq[i] = (firstFreq[i] || 0) + 1;
+    }
+    for(var i of second){
+        secondFreq[i] = (secondFreq[i] || 0) +1;
+    }
+
+    for(var i in firstFreq){
+        if(firstFreq[i] !== secondFreq[i]){
+            return false;
+        }
+    }
+    return true;
+}
+
+console.log("Same Frequency");
+console.log(sameFrequency(34,14));
+
 //Multiple Pointers creates pointers based on index and approaches a certain value based on problem
 
 //finds first pair of numbers that add up to 0
@@ -152,6 +183,30 @@ function countUniqueValues(array) {
 }
 
 var testArray = [1,2,3,4,4,4,7,7,12,12,13];
+console.log("Unique Values In An Array");
 console.log(countUniqueValues(testArray));
 
 //Sliding Window creates a new window if needed or stores info based on the problem
+
+//finds the maximum of a set of numbers
+function maxSubarraySum(array,setNum){
+    if(setNum>array.length){
+        return 0;
+    }
+    var maxSum =0;
+    var tempSum = 0;
+    for(var i =0; i<setNum; i++){
+        maxSum += array[i];
+    }
+    tempSum = maxSum;
+    for(var i =setNum; i<array.length; i++){
+        tempSum = tempSum - array[i-setNum] + array[i];
+        maxSum = Math.max(maxSum,tempSum);
+    }
+    return maxSum;
+}
+
+var testArray = [4,2,1,6,2];
+set = 4;
+console.log("Max Sum")
+console.log(maxSubarraySum(testArray,4));
