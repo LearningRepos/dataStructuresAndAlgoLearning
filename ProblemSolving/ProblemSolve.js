@@ -124,6 +124,22 @@ function sameFrequency(num1,num2) {
 console.log("Same Frequency");
 console.log(sameFrequency(34,14));
 
+//finds if a variable number of arguments have any duplicates
+function areThereDuplicates() {
+    var collector = {};
+    for(var i of arguments){
+        collector[i] = (collector[i] || 0) +1;
+    }
+    for(var i in collector){
+        if(collector[i] === 2){
+            return true;
+        }
+    }
+    return false;
+}
+console.log("Variable Duplicates")
+console.log(areThereDuplicates("a","b","c","a"));
+
 //Multiple Pointers creates pointers based on index and approaches a certain value based on problem
 
 //finds first pair of numbers that add up to 0
@@ -185,6 +201,27 @@ function countUniqueValues(array) {
 var testArray = [1,2,3,4,4,4,7,7,12,12,13];
 console.log("Unique Values In An Array");
 console.log(countUniqueValues(testArray));
+
+//finds if a pair of numbers exists that satisfies the average
+function averagePair(array,average) {
+    var start = 0;
+    var end = array.length-1;
+    while(start<end){
+        var calcAvg = (array[start] + array[end])/2;
+        if(calcAvg === average){
+            return true;
+        }
+        else if(calcAvg>average){
+            end--;
+        }
+        else if(calcAvg<average){
+            start++;
+        }
+    }
+    return false;
+}
+console.log("Average Pair");
+console.log(averagePair([1,2,3], 2));
 
 //Sliding Window creates a new window if needed or stores info based on the problem
 
