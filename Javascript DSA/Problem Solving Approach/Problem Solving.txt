@@ -1,0 +1,27 @@
+﻿-an algorithm is a set of steps that accomplishes a task and asked commonly in coding interviews
+
+
+1.
+-understand the problem by asking important questions beforehand before actually doing
+        -restate problem in own words?
+        -inputs and outputs to problems?
+                -what should output look like?
+        -can outputs be determined by just the inputs?
+-how should I label the most important pieces of data and classify them
+
+
+2.Give concrete examples
+        -make test cases by formulating inputs and outputs
+        -start small and go on to edge cases later on
+
+
+3.Break it down
+        -think or write out the logic/pseudocode before you actually start coding
+
+
+4. Solve or simplify
+        -actually code step by step
+
+
+5. Look back and refactor
+        -see if any time efficiency or readable improvements can be made once the code is actually finished
