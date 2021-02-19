@@ -1,6 +1,6 @@
 # dataStructuresAndAlgoLearning
 
-This repo is my code from Colt Steele'a Data Structures Course which gave me a high level of various data structures and algorithms in Javascript such as linked lists, binary search trees, binary heaps,etc.
+This repo is my code from Colt Steele'a Data Structures Course which gave me a high level of various data structures and algorithms in Javascript such as linked lists, binary search trees, binary heaps,etc. This repo also contains equivalent code in Java as that is my intended language for coding interviews.
 
 ## Installation
 
