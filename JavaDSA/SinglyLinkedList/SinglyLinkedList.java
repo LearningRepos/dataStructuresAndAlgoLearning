@@ -1,3 +1,5 @@
+package JavaDSA.SinglyLinkedList;
+
 public class SinglyLinkedList {
 	Node head;
 

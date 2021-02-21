@@ -1,3 +1,5 @@
+package JavaDSA.DoublyLinkedList;
+
 public class DoublyLinkedList {
     Node head = null;
     Node tail = null;
