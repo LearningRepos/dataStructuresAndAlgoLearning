@@ -1,3 +1,5 @@
+package JavaDSA.Sorts.QuickSort;
+
 public class QuickSort {
   public static void main(String args[]) {
     int[] array = { 1102, 4205, 1417, 8731, 3567, 4551, 3847, 1134, 1711, 1099, 2069, 2914, 5773, 9267, 1048, 7675,
