@@ -3,18 +3,85 @@ import java.util.*;
 public class App {
     public static void main(String[] args) {
         Graph g = new Graph();
-        g.addVertex("USA");
-        g.addVertex("Canada");
-        g.addVertex("Mexico");
-        g.addEdge("Canada", "USA");
-        g.addEdge("USA", "Mexico");
-//        g.removeEdge("USA","Mexico");
-//        g.removeVertex("USA");
+        g.addVertex("A");
+        g.addVertex("B");
+        g.addVertex("C");
+        g.addVertex("D");
+        g.addVertex("E");
+        g.addVertex("F");
+
+        g.addEdge("A", "B");
+        g.addEdge("A", "C");
+        g.addEdge("B", "D");
+        g.addEdge("C", "E");
+        g.addEdge("D", "E");
+        g.addEdge("D", "F");
+        g.addEdge("E", "F");
         System.out.println(g.graph);
+        System.out.println(g.dfsRecursive("A", new ArrayList<String>(), new HashMap<String, Boolean>()));
+        System.out.println(g.dfsIterative("A", new ArrayList<String>(), new HashMap<String, Boolean>()));
+        System.out.println(g.bfs("A", new ArrayList<String>(), new HashMap<String, Boolean>()));
     }
 
     public static class Graph {
         HashMap<String, List<String>> graph = new HashMap<>();
+
+        public List<String> bfs(String vertex, List<String> results, HashMap<String, Boolean> visited) {
+            if (!graph.containsKey(vertex) || graph.get(vertex).size() == 0) return results;
+            Queue<String> vertices = new ArrayDeque<>();
+            vertices.add(vertex);
+            visited.put(vertex, true);
+
+            while (!vertices.isEmpty()) {
+                String currentVertex = vertices.poll();
+                results.add(currentVertex);
+
+                for (String neighbor : graph.get(currentVertex)) {
+                    if (!visited.containsKey(neighbor)) {
+                        visited.put(neighbor, true);
+                        vertices.add(neighbor);
+                    }
+                }
+
+            }
+
+            return results;
+        }
+
+        public List<String> dfsRecursive(String vertex, List<String> results, HashMap<String, Boolean> visited) {
+            if (!graph.containsKey(vertex) || graph.get(vertex).size() == 0) return results;
+            results.add(vertex);
+            visited.put(vertex, true);
+
+            List<String> neighbors = graph.get(vertex);
+            for (String neighbor : neighbors) {
+                if (!visited.containsKey(neighbor)) dfsRecursive(neighbor, results, visited);
+            }
+
+            return results;
+        }
+
+        public List<String> dfsIterative(String vertex, List<String> results, HashMap<String, Boolean> visited) {
+            if (!graph.containsKey(vertex) || graph.get(vertex).size() == 0) return results;
+            Stack<String> vertices = new Stack<>();
+            vertices.add(vertex);
+            visited.put(vertex, true);
+
+            while (!vertices.isEmpty()) {
+                String currentVertex = vertices.pop();
+                results.add(currentVertex);
+
+                for (String neighbor : graph.get(currentVertex)) {
+                    if (!visited.containsKey(neighbor)) {
+                        visited.put(neighbor, true);
+                        vertices.add(neighbor);
+                    }
+                }
+
+            }
+
+            return results;
+        }
 
         public void addVertex(String vertex) {
             if (!graph.containsKey(vertex)) graph.put(vertex, new ArrayList<String>());
