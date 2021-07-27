@@ -1,3 +1,7 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 /**
  * Name: Mihir Achyuta
  * Lab Number: 4
@@ -11,6 +15,7 @@ public class LinkedList {
     private int count;
     private LinkedNode head;
     private LinkedNode tail;
+    PrintWriter myWriter = new PrintWriter(new FileWriter("output", true));
 
     /**
      * These functions get the private attributes and return them
@@ -51,7 +56,7 @@ public class LinkedList {
     }
 
     //constructor for creating a Linked List
-    LinkedList() {
+    LinkedList() throws IOException {
     }
 
     /**
@@ -62,6 +67,7 @@ public class LinkedList {
      * sets the LinkedList head and tail to null and the length to 0
      **/
     public void destroy() {
+        //reset everything
         setCount(0);
         setHead(null);
         setTail(null);
@@ -75,6 +81,7 @@ public class LinkedList {
      * returns the added LinkedNode
      **/
     public LinkedNode addToList(LinkedNode nodeToAdd) {
+        //set head and tail to node if empty else append to end
         if (getHead() == null) {
             setHead(nodeToAdd);
             setTail(nodeToAdd);
@@ -83,7 +90,7 @@ public class LinkedList {
             tail.next = nodeToAdd;
             setTail(tail.next);
         }
-        setCount(count + 1);
+        setCount(getCount() + 1);
 
         return nodeToAdd;
     }
@@ -96,21 +103,27 @@ public class LinkedList {
      * returns the deleted LinkedNode if the node was deleted or null if the LinkedNode is not in the array
      **/
     public LinkedNode deleteFromList(LinkedNode nodeToDelete) {
+        //if node exists then delete
         if (linkedNodeExists(nodeToDelete) && !isEmpty()) {
+            //destroy list if 1 node
             if (getHead().next == null) {
                 LinkedNode deletedNode = getHead();
                 destroy();
 
                 return deletedNode;
-            } else if (nodeToDelete.data.getCurrencyNoteValue() == getHead().data.getCurrencyNoteValue()) {
+            }
+            //if node is head then remove head and make new head
+            else if (nodeToDelete.data.getCurrencyNoteValue() == getHead().data.getCurrencyNoteValue()) {
                 if (nodeToDelete.data.getCurrencyCoinValue() == getHead().data.getCurrencyCoinValue()) {
                     LinkedNode deletedNode = getHead();
                     setHead(getHead().next);
-                    getHead().next = null;
+                    deletedNode.next = null;
 
                     return deletedNode;
                 }
-            } else if (nodeToDelete.data.getCurrencyNoteValue() == getTail().data.getCurrencyNoteValue()) {
+            }
+            //if node tail remove tail and reassign new tail
+            else if (nodeToDelete.data.getCurrencyNoteValue() == getTail().data.getCurrencyNoteValue()) {
                 if (nodeToDelete.data.getCurrencyCoinValue() == getTail().data.getCurrencyCoinValue()) {
                     LinkedNode currNode = getHead();
                     while (currNode.next != getTail()) {
@@ -122,7 +135,9 @@ public class LinkedList {
 
                     return nodeToDelete;
                 }
-            } else {
+            }
+            //else navigate to deleted node and set prevNode to nextNode
+            else {
                 LinkedNode currNode = getHead();
                 LinkedNode prevNode = null;
                 LinkedNode nextNode = null;
@@ -134,17 +149,13 @@ public class LinkedList {
                     currNode = currNode.next;
                 }
 
-                prevNode.data.printCurrency();
-                currNode.data.printCurrency();
-                nextNode.data.printCurrency();
-
                 prevNode.next = nextNode;
                 currNode.next = null;
 
                 return currNode;
             }
 
-            setCount(count - 1);
+            setCount(getCount() - 1);
         }
 
         return null;
@@ -160,6 +171,7 @@ public class LinkedList {
     public boolean linkedNodeExists(LinkedNode nodeToFind) {
         LinkedNode currNode = getHead();
 
+        //traverse list and check each value for equivalency
         while (currNode != null) {
             if (nodeToFind.data.getCurrencyNoteValue() == currNode.data.getCurrencyNoteValue()) {
                 if (nodeToFind.data.getCurrencyCoinValue() == currNode.data.getCurrencyCoinValue()) {
@@ -222,13 +234,21 @@ public class LinkedList {
      * Post:
      * returns nothing as it is void but prints a line in the format : currencyNoteValue currencyNoteName currencyCoinValue currencyCoinName
      **/
-    public void printList() {
+    public void printList() throws IOException {
         LinkedNode currNode = getHead();
+        System.out.println("Printing Current LinkedList");
+        myWriter.write("Printing Current LinkedList");
+        myWriter.write(System.getProperty("line.separator"));
 
         //print as long as node is not null
         while (currNode != null) {
             currNode.data.printCurrency();
+            myWriter.write(currNode.data.getCurrencyNoteValue() + " Dollar " + currNode.data.getCurrencyCoinValue() + " Cent");
+            myWriter.write(System.getProperty("line.separator"));
             currNode = currNode.next;
         }
+        myWriter.write(System.getProperty("line.separator"));
+        myWriter.flush();
+        System.out.println();
     }
 }
