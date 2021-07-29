@@ -1,12 +1,11 @@
-public class BSTNode {
+public class BSTNode extends LinkedNode {
     private money data;
     private BSTNode left;
     private BSTNode right;
 
-    BSTNode(money data, BSTNode left, BSTNode right){
+    BSTNode(money data) {
+        super(data);
         this.data = data;
-        this.left = left;
-        this.right = right;
     }
 
     public money getData() {
