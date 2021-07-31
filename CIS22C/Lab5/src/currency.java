@@ -249,6 +249,20 @@ public abstract class currency {
         comparedCurrency.printCurrency();
     }
 
+    public boolean isCurrencyGreaterBool(currency comparedCurrency) {
+        boolean currencyGreater = false;
+
+        if (getCurrencyNoteValue() > comparedCurrency.getCurrencyNoteValue()) {
+            currencyGreater = true;
+        } else if (getCurrencyNoteValue() == comparedCurrency.getCurrencyNoteValue()) {
+            if (getCurrencyCoinValue() > comparedCurrency.getCurrencyCoinValue()) {
+                currencyGreater = true;
+            }
+        }
+
+        return currencyGreater;
+    }
+
     /**
      * This function prints a detailed version of the currency object
      * Pre:
