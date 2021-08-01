@@ -1,9 +1,9 @@
 /**
  * Name: Mihir Achyuta
- * Lab Number: 4
+ * Lab Number: 5
  * Purpose of the Assignment:
- * -The purpose of this assignment is to implement a Linked List, Stack, and Queue with money objects and LinkedNodes and perform
- * various operations on each of these data structures
+ * -The purpose of this assignment is to implement a BST and a BSTNode ADT containing money objects and to perform various traversals on the BST tree
+ * along with allowing the user to insert, delete, and search nodes in the BST.
  **/
 
 public abstract class currency {
@@ -195,6 +195,18 @@ public abstract class currency {
         printCurrency();
         System.out.println(currencyEqual ? "is equal to " : "is not equal to ");
         comparedCurrency.printCurrency();
+    }
+
+    public boolean areCurrencyEqualBool(currency comparedCurrency) {
+        boolean currencyEqual = false;
+
+        if (getCurrencyNoteValue() == comparedCurrency.getCurrencyNoteValue()) {
+            if (getCurrencyCoinValue() == comparedCurrency.getCurrencyCoinValue()) {
+                currencyEqual = true;
+            }
+        }
+
+        return currencyEqual;
     }
 
     /**
