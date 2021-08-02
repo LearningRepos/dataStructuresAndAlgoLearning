@@ -6,11 +6,14 @@
  * along with allowing the user to insert, delete, and search nodes in the BST.
  **/
 
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.*;
 
 public class lab5main {
     public static void main(String[] args) throws IOException {
+        //original money objects, bst, scanner, printwriter declared
         money[] originalMoney = {
                 new money(57, 12), new money(23, 44), new money(87, 43),
                 new money(68, 99), new money(111, 22), new money(44, 55),
@@ -22,10 +25,16 @@ public class lab5main {
         };
         BST moneyTree = new BST();
         Scanner inputScanner = new Scanner(System.in);
+        PrintWriter myWriter = new PrintWriter(new FileWriter("output.txt", true));
 
+        //inserts original money objects in and traverses tree
         for (money m : originalMoney) moneyTree.insert(new BSTNode(m));
-        printAllTraversals(moneyTree);
+        moneyTree.bfs();
+        moneyTree.inOrder();
+        moneyTree.preOrder();
+        moneyTree.postOrder();
 
+        //asks user to input commands
         System.out.println("Please enter commands (add/delete/search/traverse/exit) for the binary search tree: ");
         System.out.println("Commands must be entered in this form aside from exit/traverse: command_name decimal_number");
         System.out.println();
@@ -35,12 +44,18 @@ public class lab5main {
 
             if (result[0].equals("exit")) {
                 System.out.println("Exiting Program and Printing traversals: ");
-                printAllTraversals(moneyTree);
+                moneyTree.bfs();
+                moneyTree.inOrder();
+                moneyTree.preOrder();
+                moneyTree.postOrder();
                 System.out.println();
                 break;
             } else if (result[0].equals("traverse")) {
                 System.out.println("Printing traversals: ");
-                printAllTraversals(moneyTree);
+                moneyTree.bfs();
+                moneyTree.inOrder();
+                moneyTree.preOrder();
+                moneyTree.postOrder();
                 System.out.println();
             } else if ((result[0].equals("add") || result[0].equals("delete") || result[0].equals("search")) && result.length == 2) {
                 System.out.println("Performing command " + result[0] + " on the BST");
@@ -75,23 +90,23 @@ public class lab5main {
                         }
                     } else {
                         System.out.println("Note value and Coin value cannot have negative values");
+                        myWriter.write("Note value and Coin value cannot have negative values");
+                        myWriter.write(System.getProperty("line.separator"));
+                        myWriter.flush();
                     }
                 } catch (Exception e) {
+                    System.out.println(e);
                     //if decimal number not entered correctly, string wont parse correctly and exception thrown
                     //if currency is negative then exception thrown
                     System.out.println("Please enter a valid decimal number as " + stringifiedDecimal + " is invalid");
+                    myWriter.write("Please enter a valid decimal number as " + stringifiedDecimal + " is invalid");
+                    myWriter.write(System.getProperty("line.separator"));
+                    myWriter.flush();
                 }
 
                 System.out.println("Performed command " + result[0] + " on the BST");
                 System.out.println();
             }
         }
-    }
-
-    public static void printAllTraversals(BST moneyTree) throws IOException {
-        moneyTree.bfs();
-        moneyTree.inOrder();
-        moneyTree.preOrder();
-        moneyTree.postOrder();
     }
 }

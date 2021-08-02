@@ -104,7 +104,6 @@ Performing Breadth First Search Traversal
 1 Dollar 0 Cent
 21 Dollar 0 Cent
 51 Dollar 0 Cent
-345 Dollar 67 Cent
 251 Dollar 0 Cent
 151 Dollar 0 Cent
 
@@ -127,7 +126,6 @@ Performing Depth First Search InOrder Traversal
 111 Dollar 22 Cent
 151 Dollar 0 Cent
 251 Dollar 0 Cent
-345 Dollar 67 Cent
 543 Dollar 21 Cent
 
 Performing Depth First Search PreOrder Traversal
@@ -148,7 +146,6 @@ Performing Depth First Search PreOrder Traversal
 111 Dollar 22 Cent
 101 Dollar 0 Cent
 543 Dollar 21 Cent
-345 Dollar 67 Cent
 251 Dollar 0 Cent
 151 Dollar 0 Cent
 
@@ -168,7 +165,166 @@ Performing Depth First Search PostOrder Traversal
 101 Dollar 0 Cent
 151 Dollar 0 Cent
 251 Dollar 0 Cent
-345 Dollar 67 Cent
+543 Dollar 21 Cent
+111 Dollar 22 Cent
+87 Dollar 43 Cent
+57 Dollar 12 Cent
+
+Performing Breadth First Search Traversal
+57 Dollar 12 Cent
+23 Dollar 44 Cent
+87 Dollar 43 Cent
+18 Dollar 36 Cent
+44 Dollar 55 Cent
+68 Dollar 99 Cent
+111 Dollar 22 Cent
+1 Dollar 0 Cent
+20 Dollar 21 Cent
+36 Dollar 18 Cent
+48 Dollar 48 Cent
+77 Dollar 77 Cent
+101 Dollar 0 Cent
+543 Dollar 21 Cent
+21 Dollar 0 Cent
+51 Dollar 0 Cent
+251 Dollar 0 Cent
+151 Dollar 0 Cent
+
+Performing Depth First Search InOrder Traversal
+1 Dollar 0 Cent
+18 Dollar 36 Cent
+20 Dollar 21 Cent
+21 Dollar 0 Cent
+23 Dollar 44 Cent
+36 Dollar 18 Cent
+44 Dollar 55 Cent
+48 Dollar 48 Cent
+51 Dollar 0 Cent
+57 Dollar 12 Cent
+68 Dollar 99 Cent
+77 Dollar 77 Cent
+87 Dollar 43 Cent
+101 Dollar 0 Cent
+111 Dollar 22 Cent
+151 Dollar 0 Cent
+251 Dollar 0 Cent
+543 Dollar 21 Cent
+
+Performing Depth First Search PreOrder Traversal
+57 Dollar 12 Cent
+23 Dollar 44 Cent
+18 Dollar 36 Cent
+1 Dollar 0 Cent
+20 Dollar 21 Cent
+21 Dollar 0 Cent
+44 Dollar 55 Cent
+36 Dollar 18 Cent
+48 Dollar 48 Cent
+51 Dollar 0 Cent
+87 Dollar 43 Cent
+68 Dollar 99 Cent
+77 Dollar 77 Cent
+111 Dollar 22 Cent
+101 Dollar 0 Cent
+543 Dollar 21 Cent
+251 Dollar 0 Cent
+151 Dollar 0 Cent
+
+Performing Depth First Search PostOrder Traversal
+1 Dollar 0 Cent
+21 Dollar 0 Cent
+20 Dollar 21 Cent
+18 Dollar 36 Cent
+36 Dollar 18 Cent
+51 Dollar 0 Cent
+48 Dollar 48 Cent
+44 Dollar 55 Cent
+23 Dollar 44 Cent
+77 Dollar 77 Cent
+68 Dollar 99 Cent
+101 Dollar 0 Cent
+151 Dollar 0 Cent
+251 Dollar 0 Cent
+543 Dollar 21 Cent
+111 Dollar 22 Cent
+87 Dollar 43 Cent
+57 Dollar 12 Cent
+
+Performing Breadth First Search Traversal
+57 Dollar 12 Cent
+23 Dollar 44 Cent
+87 Dollar 43 Cent
+18 Dollar 36 Cent
+44 Dollar 55 Cent
+68 Dollar 99 Cent
+111 Dollar 22 Cent
+1 Dollar 0 Cent
+20 Dollar 21 Cent
+36 Dollar 18 Cent
+48 Dollar 48 Cent
+77 Dollar 77 Cent
+101 Dollar 0 Cent
+543 Dollar 21 Cent
+21 Dollar 0 Cent
+51 Dollar 0 Cent
+251 Dollar 0 Cent
+151 Dollar 0 Cent
+
+Performing Depth First Search InOrder Traversal
+1 Dollar 0 Cent
+18 Dollar 36 Cent
+20 Dollar 21 Cent
+21 Dollar 0 Cent
+23 Dollar 44 Cent
+36 Dollar 18 Cent
+44 Dollar 55 Cent
+48 Dollar 48 Cent
+51 Dollar 0 Cent
+57 Dollar 12 Cent
+68 Dollar 99 Cent
+77 Dollar 77 Cent
+87 Dollar 43 Cent
+101 Dollar 0 Cent
+111 Dollar 22 Cent
+151 Dollar 0 Cent
+251 Dollar 0 Cent
+543 Dollar 21 Cent
+
+Performing Depth First Search PreOrder Traversal
+57 Dollar 12 Cent
+23 Dollar 44 Cent
+18 Dollar 36 Cent
+1 Dollar 0 Cent
+20 Dollar 21 Cent
+21 Dollar 0 Cent
+44 Dollar 55 Cent
+36 Dollar 18 Cent
+48 Dollar 48 Cent
+51 Dollar 0 Cent
+87 Dollar 43 Cent
+68 Dollar 99 Cent
+77 Dollar 77 Cent
+111 Dollar 22 Cent
+101 Dollar 0 Cent
+543 Dollar 21 Cent
+251 Dollar 0 Cent
+151 Dollar 0 Cent
+
+Performing Depth First Search PostOrder Traversal
+1 Dollar 0 Cent
+21 Dollar 0 Cent
+20 Dollar 21 Cent
+18 Dollar 36 Cent
+36 Dollar 18 Cent
+51 Dollar 0 Cent
+48 Dollar 48 Cent
+44 Dollar 55 Cent
+23 Dollar 44 Cent
+77 Dollar 77 Cent
+68 Dollar 99 Cent
+101 Dollar 0 Cent
+151 Dollar 0 Cent
+251 Dollar 0 Cent
 543 Dollar 21 Cent
 111 Dollar 22 Cent
 87 Dollar 43 Cent
