@@ -39,8 +39,6 @@ public class Lab1 {
         //gets the user input of array elements and checks each element if it is between 1 and 9999
         //if an invalid number inputted, then all other numbers will be inputted and the user
         //will be prompted to reenter a valid number(s)
-        System.out.println("Please enter the numbers for the array elements");
-        System.out.println("The numbers must be between 1 and 9999 inclusive");
         while (arrayPointer < numberArray.length) {
             int arrayElement = inputScanner.nextInt();
 
